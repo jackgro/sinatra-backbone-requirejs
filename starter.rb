@@ -33,7 +33,7 @@ class Starter < Sinatra::Base
 
 
   set :assets_precompile, %w(*.js app.css)
-  set :assets_prefix, %w(app/assets app/bower_components)
+  set :assets_prefix, %w(app/assets app/assets/project/bower app/assets/project/bundles)
   set :assets_css_compressor, :sass
   set :assets_js_compressor, :uglifier
 
@@ -63,8 +63,27 @@ class Starter < Sinatra::Base
   #   { :expires => Time.now + 60*40, :domain => ".interfolio.com" }
   # end
 
+  before /^(?!\/(assets))/ do
+    verify_authentication
+    @name = get_user_name
+    @print = params[:print] if params[:print]
+    parse_content_body
+  end
+
   get '/' do
-    erb :index
+    adjust_path('/cases')
+  end
+
+  get '/cases' do
+    @bundle = :cases
+    @user = get_user
+    redirect '/admin/users/new' if is_super?(@user)
+    erb :"cases/index"
+  end
+
+  get '/about' do
+    @bundle = :about
+    erb :"about/index"
   end
 end
 

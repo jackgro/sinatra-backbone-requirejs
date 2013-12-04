@@ -13,7 +13,7 @@ module Sinatra::HttpUtils
   # If the request is a POST or PUT, we merge the request body
   # into the params to be sent to the server.
   def parse_content_body
-    if put_or_post? && request.content_type=="application/json"
+    if put_or_post? && request.content_type.include?("application/json")
       body_params = request.body.read
       parsed = body_params && body_params.length >= 2 ? JSON.parse(body_params) : nil
       params.merge!(parsed)

@@ -12,16 +12,16 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "1.8.3",
-    "backbone": "*",
-    "underscore": "*",
+    "jquery": "1.10.2",
+    "backbone-amd": "1.1.0",
+    "underscore-amd": "1.5.2",
     "requirejs": "*",
     "text": "*",
     "handlebars": "*",
     "modernizr": "2.6.2",
     "json2": "*",
     "select2": "*",
-    "jquery.ui": "1.9.2",
+    "jquery.ui": "1.10.3",
     "jqueryui-touch-punch": "*",
     "jquery-form": "*"
   },

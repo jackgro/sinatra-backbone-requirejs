@@ -65,11 +65,24 @@
     </footer>
   </div> <!-- /wrap -->
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/assets/jquery.min.js"><\/script>')</script>
     <%= javascript_tag 'tenure' %>
-    <%= yield_content :extra %>
-    <script data-main=<%= asset_path('main') %> src=<%= asset_path('require')%> ></script>
+
+    <!-- This is not the normal way to load require js.
+    We have a global module that we want to load before
+    each bundle gets executed. After require.js is loaded
+    we require global, and inside there after it loads,
+    we require a bundle whose path is dependent on a 
+    variable set for each route in the sinatra app --!>
+    <script src=<%= asset_path('require')%> ></script>
+    <script type="text/javascript">
+      require(['/assets/global'], function(global) {
+        require(["/assets/bundles/<%= @bundle %>"]);
+      });
+    </script>
+
+    <%# <%= yield_content :extra %1> %>
     <%# <%= javascripts %1> %>
 
     <!-- google analytics -->
