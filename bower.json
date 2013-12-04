@@ -1,0 +1,29 @@
+{
+  "name": "Starter Frontend App",
+  "version": "1.0.0",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/scripts/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.8.3",
+    "backbone": "*",
+    "underscore": "*",
+    "requirejs": "*",
+    "text": "*",
+    "handlebars": "*",
+    "modernizr": "2.6.2",
+    "json2": "*",
+    "select2": "*",
+    "jquery.ui": "1.9.2",
+    "jqueryui-touch-punch": "*",
+    "jquery-form": "*"
+  },
+  "private": true
+}

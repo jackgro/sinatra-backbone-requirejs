@@ -1,0 +1,11 @@
+api_path: '/'
+api_server:
+  production:   'https://logic.interfolio.com'
+  test:         'https://logic-test.interfolio.com'
+  development:  'https://logic-test.interfolio.com'
+  sandbox:      'https://logic-sandbox.interfolio.com'
+server_suffix:
+  production:   ''
+  test:         '-test'
+  development:  '-test'
+  sandbox:      '-sandbox'

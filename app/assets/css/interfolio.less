@@ -1,0 +1,183 @@
+/* Import colors, fonts, etc. */
+@import "variables.less";
+@import "mixins.less";
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+body { background: url('/images/inverse-texture.png') repeat scroll 0 0 @ifBgBrown; color: #313131; font-size: 16px; font-weight: 300; line-height: 1.4em; }
+h1 { color: @ifHeadText; font-family: @mainHeadingFamily; font-size: 32px; font-weight: normal; line-height: 1.1em; }
+h1 .highlight { color: @ifOrange; font-style: normal; }
+h2, input.secondary-title { color: @ifText1; font-family: @subHeadingFamily; font-size: 26px; font-weight: normal; line-height: 1.2em; }
+h3, input.sub-title { color: @ifText2; font-family: @subHeadingFamily; font-size: 21px; font-weight: normal; line-height: 1.3em; }
+h4 { color: @ifText1; font-family: @subSubHeadingFamily; font-size: 16px; font-weight: normal; margin: 0.5em 0 0.33em; }
+body ul, body li { line-height: 1.48em; }
+a, a:visited { color: #0067BF; }
+
+.btn {
+  font-family: @subSubHeadingFamily;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 24px;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-transform: none;
+  .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), inset 0 0 0 1px rgba(255,255,255, 0.2), inset 0 0 0 2px rgba(0,0,0, 0.05), 0 1px 3px rgba(0,0,0,.15)");
+}
+.btn-large { font-size: 16px; line-height: normal; }
+a.btn { color: @grayDark; text-decoration: none; }
+a.btn.btn-info, a.btn.btn-primary { color: @white; }
+.btn-group {
+  .caret { margin-left: 2px; margin-top: 10px;}
+  & > .btn {
+    font-size: 14px;
+    &.dropdown-toggle { .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), inset 0 0 0 1px rgba(255,255,255, 0.2), inset 0 0 0 2px rgba(0,0,0, 0.05), 0 1px 3px rgba(0,0,0,.15)"); }
+  }
+}
+
+i.iconic { font-style: normal; }
+
+
+/* =============================================================================
+   Header
+   ========================================================================== */
+
+#banner {
+  background: url('/images/stripe-texture.png') repeat scroll 0 0 #FFFEFD;
+  overflow: hidden;
+  padding-bottom: 6px;
+  .navbar-inner {
+    background-color: @ifBgBrown;
+    background-image: url('/images/inverse-texture.png');
+    line-height: 86px;
+    min-height: 86px;
+    .box-shadow(~"0 0 6px rgba(0, 0, 0, .6),inset 0 -1px 0 rgba(0, 0, 0, .5),inset 0 -2px 12px 1px rgba(0, 0, 0, 0.25)");
+  }
+  .brand {
+    background: url("/images/logo-i.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    line-height: 1;
+    text-indent: -9999px;
+    height: 66px;
+    width: 185px;
+    padding: 0;
+    margin: 10px 36px 10px 0; }
+  .nav {
+    float: left;
+    height: 86px;
+    padding: 0;
+    line-height: 86px;
+    margin: 0;
+    &.pull-right {
+      float: right;
+      text-align: right; }
+    &.page-nav {
+      .iconic { margin-right: 0.33em; }
+      a {
+        color: #D7D5D3; color:
+        rgba(255,255,255,0.7);
+        font-family: @serifFontFamily;
+        font-size: 24px;
+        font-style: italic;
+        line-height: 90px;
+        &:hover { color: #e8e7e6; color: rgba(255,255,255, 0.9); }
+      }
+      .product-name:hover { background: transparent; }
+    }
+    a { text-decoration: none; }
+    li { display: inline; }
+  }
+  .btn-header {
+    margin-right: 0.67em;
+    .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.4), inset 0 0 0 1px rgba(255,255,255, 0.4), inset 0 0 0 2px rgba(0,0,0, 0.2), 0 1px 3px rgba(0,0,0,.15)");
+  }
+}
+
+#banner .btn i,
+#content-info .btn i { margin-top: 2px; margin-right: 2px; }
+
+
+
+/* =============================================================================
+   Content Containers
+   ========================================================================== */
+
+#content { background: @white; padding-bottom: 64px; padding-top: 36px; position: relative; }
+
+.container { width: 100%; }
+.container-fluid { padding-left: 0; padding-right: 0; }
+
+.alt-row {
+  background: url('/images/alt-texture.png') repeat scroll 0 0 @grayLighter;
+  h1 { text-shadow: 0 1px 0 @white; }
+}
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+
+#content-info {
+  background: url('/images/inverse-texture.png') repeat scroll 0 0 @ifBgBrown;
+  padding-bottom: 36px;
+  padding-top: 35px;
+  border-top: 1px solid @grayLighter;
+  line-height: 48px;
+  overflow: hidden;
+  .box-shadow(~"0 -2px 5px rgba(0, 0, 0, .1), inset 0 1px 0 rgba(0, 0, 0, .4), inset 0 2px 0 rgba(255, 255, 255, 0.4), inset 0 7px 7px 1px rgba(40,30,10,0.15)");
+  a { text-decoration: none; }
+  .footer-sign-in { float: left; margin: 8px 0; }
+  .vcard a, .vcard span, li a, small { color: @ifWhite; line-height: 40px; }
+  address, li, ul { display: inline; font-style: normal; }
+  .vcard a, .vcard span, li { padding: 0 1em; }
+  .policy {
+    clear: both;
+    line-height: 40px;
+    padding: 1em 0;
+    small { float: left; font-size: 16px; line-height: 44px; }
+    ul { float: right; margin: 0; }
+  }
+  .vcard {
+    float: right;
+    line-height: 34px;
+    .email, .tel { display: block; float: left; font-size: 17px; font-weight: bold; line-height: 48px; margin: 0;  }
+    .social-links { display: inline-block; width: auto; }
+    .social {
+      display: block;
+      float: left;
+      margin-left: 1em;
+      padding: 0;
+      height: 49px;
+      width: 48px;
+      text-indent: -9999px; }
+    .twitter { background: url('/images/twitter-i.png') no-repeat scroll 0 0 transparent; }
+    .instagram { background: url('/images/instagram-i.png') no-repeat scroll 0 0 transparent; }
+    .youtube { background: url('/images/youtube-i.png') no-repeat scroll 0 0 transparent; }
+    .facebook { background: url('/images/facebook-i.png') no-repeat scroll 0 0 transparent; }
+  }
+  li.security-logos { padding: 0 0 0 1em; white-space: pre; }
+}
+
+#content-info p small { font-size: 13px; }
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width:979px) {
+  #wrap #content-info  {
+    text-align: center;
+    .footer-sign-in { float: none; width: 50%; }
+    .vcard {
+      clear: both;
+      float: none;
+      text-align: center;
+      .email, .tel { padding: 0; text-align: center; width: 100%; }
+    }
+    .policy {
+      ul { padding: 0; width: 100%; }
+      small, li { display: block; padding: 0; text-align: center; width: 100%; }
+    }
+  }
+}
