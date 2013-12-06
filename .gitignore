@@ -1,0 +1,8 @@
+.DS_Store
+coverage
+tmp
+.htaccess
+codekit-config.json
+dev.rb
+.ruby-version
+.ruby-gemset

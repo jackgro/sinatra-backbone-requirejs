@@ -91,6 +91,11 @@ class Starter < Sinatra::Base
     erb :"cases/candidate_info"
   end
 
+  get '/cases/required_documents' do
+    @bundle = 'cases/required_documents'
+    erb :"cases/required_documents"
+  end
+
   get '/about' do
     @bundle = :about
     erb :"about/index"
