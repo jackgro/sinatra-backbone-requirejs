@@ -16,7 +16,7 @@
     "backbone-amd": "1.1.0",
     "underscore-amd": "1.5.2",
     "requirejs": "*",
-    "text": "*",
+    "requirejs-text": "*",
     "handlebars": "*",
     "modernizr": "2.6.2",
     "json2": "*",

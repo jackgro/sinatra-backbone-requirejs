@@ -75,10 +75,20 @@ class Starter < Sinatra::Base
   end
 
   get '/cases' do
-    @bundle = :cases
+    @bundle = 'cases/index'
     @user = get_user
     redirect '/admin/users/new' if is_super?(@user)
     erb :"cases/index"
+  end
+
+  get '/cases/new' do
+    erb :"cases/new"
+  end
+
+  # get '/cases/:id/candidate_info' do
+  get '/cases/candidate_info' do
+    @bundle = 'cases/candidate_info'
+    erb :"cases/candidate_info"
   end
 
   get '/about' do

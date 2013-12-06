@@ -1,0 +1,16 @@
+<aside class="page-nav well sidebar-section">
+  <h1 class="visuallyhidden">Navigation</h1>
+  <ul class="page-nav-links">
+    <% is_eval = defined?(@user) && is_eval?(@user) -%>
+    <% is_eeo = defined?(@user) && is_eeo?(@user) -%>
+    <% if defined?(cookies[:scope_institution]) && cookies[:scope_institution] != "0" && !is_eval && !is_eeo -%>
+      <li>
+        <a href="/admin"><i class="icon-cog"><!-- icon --></i> Administration</a>
+      </li>
+    <% end -%>
+    <li><a href="/positions"><i class="icon-group"><!-- icon --></i> Positions</a></li>
+    <% if defined?(cookies[:scope_institution]) && cookies[:scope_institution] != "0" -%>
+      <li><a href="/reports"><i class="icon-bar-chart"><!-- icon --></i> Reports</a></li>
+    <% end -%>
+  </ul>
+</aside>

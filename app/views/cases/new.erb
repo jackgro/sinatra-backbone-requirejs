@@ -1,0 +1,29 @@
+<header class="page-title">
+</header>
+<%= erb :nav -%>
+<hr class="section-divider" />
+<section id="position-info" class="focus-section">
+  <div id="error-messages" class="fade"><!-- errors --></div>
+  <h4 class="unit-select hide">Select Unit for Position</h4>
+  <select id="unit-select" name="unit-select" class="field select-field unit-select hide">
+  </select>
+  <div class="position-selection"><button class="new-position btn btn-info btn-large" disabled>Loading...</button></div>
+  <div class="default-separator clearfix">
+    <span class="default-message">or</span>
+    <hr class="section-divider" />
+  </div>
+  <div class="position-selection form-section">
+    <h4>Create from Existing Position</h4>
+    <img class="templates-loading" src="/images/select2-spinner.gif" alt="loading" />
+    <select id="template-select" name="template-select" class="field select-field hide">
+      <option>— Select Position —</option>
+    </select>
+    <button class="template-position btn btn-small hide">Select</button>
+    <p class="no-templates hide">No positions available.</p>
+  </div>
+</section>
+
+<% content_for :title do -%>New Position - <% end -%>
+<% content_for :extra do %>
+  <%# <script>var pid = "<%= cookies[:PID] -%>"</script> %>
+<% end %>
