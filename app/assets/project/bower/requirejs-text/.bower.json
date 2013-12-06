@@ -10,5 +10,5 @@
   },
   "_source": "git://github.com/requirejs/text.git",
   "_target": "*",
-  "_originalSource": "text"
+  "_originalSource": "requirejs-text"
 }
