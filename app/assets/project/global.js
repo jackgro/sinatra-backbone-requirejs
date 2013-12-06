@@ -30,7 +30,7 @@ require.config({
 });
 
 define([], function(){
-  window.Tenure = {
+  if (!window.Tenure) window.Tenure = {
     models: {},
     views: {},
     collections: {},
